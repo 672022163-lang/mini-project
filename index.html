@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif; 
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5; 
+            color: #1e293b; 
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-image: linear-gradient(to right, #4c51bf, #6b46c1); 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            padding: 15px 40px; 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+            position: fixed; 
+            top: 0;
+            width: 100%;
+            z-index: 1000; 
+            box-sizing: border-box;
+        }
+        
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.8em;
+            font-weight: 700;
+            letter-spacing: 0.5px; 
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 15px; 
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px; 
+            border-radius: 20px; 
+            font-weight: 400;
+            transition: background-color 0.3s, transform 0.2s;
+            white-space: nowrap; 
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.15); 
+            transform: translateY(-1px);
+        }
+
+        .nav-links .active {
+            background-color: #ffffff; 
+            color: #4c51bf; 
+            font-weight: 600;
+        }
+
+        .content-section {
+            padding: 150px 50px 80px; 
+            text-align: left;
+        }
+        
+        .home {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .intro {
+            flex-basis: 60%;
+            padding-right: 40px;
+            text-align: left; 
+        }
+        
+        .photo {
+            flex-basis: 35%;
+            text-align: center;
+        }
+
+        .intro h1 {
+            font-size: 3em;
+            color: #4c51bf;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .intro h1 strong {
+            color: #6b46c1;
+        }
+        
+        .intro p {
+            font-size: 1.1em;
+            color: #4b5563;
+            margin-top: 15px;
+        }
+
+        .photo img {
+            width: 50%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 12px;
+            border: none;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            filter: grayscale(10%);
+            transition: transform 0.3s;
+        }
+        
+        .photo img:hover {
+            transform: scale(1.02);
+        }
+
+        .cta-button {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1.05em;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 30px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #1e7e34;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e293b;
+            color: #e2e8f0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 992px) {
+            .navbar { padding: 15px 20px; }
+            .nav-links li { margin-left: 10px; }
+            .nav-links a { padding: 8px 10px; font-size: 0.9em; }
+            
+            .home {
+                flex-direction: column; 
+                text-align: center; 
+                padding: 30px;
+            }
+            .intro {
+                text-align: center;
+                order: 2; 
+                margin-top: 30px;
+                padding-right: 0; 
+            }
+            .intro, .photo {
+                flex-basis: 100%;
+            }
+            .photo {
+                order: 1; 
+                margin-bottom: 0;
+            }
+            .intro h1 {
+                font-size: 2em;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px 10px;
+                position: relative; 
+            }
+            .content-section {
+                padding-top: 50px; 
+            }
+            .logo {
+                margin-bottom: 10px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .nav-links li {
+                margin: 5px 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">Beatrix</a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="tentang.html">About Me</a></li>
+                <li><a href="protofolio.html">Portfolio/Projects</a></li>
+                <li><a href="resume.html">Resume/CV</a></li>
+                <li><a href="kontak.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="content-section">
+        <div class="home">
+            <section class="intro">
+                <h1>Hello! I'm BEATRIX 🌟</h1>
+                <p>Welcome to my introduction website. I am a <strong>Web Developer & UI/UX Designe</strong> who is passionate about creating engaging and functional user experiences.</p>
+                <p>Explore this site to see my background, latest projects, and my CV.</p>         
+                <a href="protofolio.html" class="cta-button">View My Projects ➡️</a>    
+            </section>
+            <section class="photo">
+                <img src="pic.jpeg" alt="Profile Photo">
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p> 🥺| &copy; 2025 BEATRIX</p>
+    </footer>
+</body>
+</html>

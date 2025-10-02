@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif; 
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5; 
+            color: #1e293b; 
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-image: linear-gradient(to right, #4c51bf, #6b46c1); 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            padding: 15px 40px; 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+            position: fixed; 
+            top: 0;
+            width: 100%;
+            z-index: 1000; 
+            box-sizing: border-box;
+        }
+        
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.8em;
+            font-weight: 700;
+            letter-spacing: 0.5px; 
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 15px; 
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px; 
+            border-radius: 20px; 
+            font-weight: 400;
+            transition: background-color 0.3s, transform 0.2s;
+            white-space: nowrap; 
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.15); 
+            transform: translateY(-1px);
+        }
+
+        .nav-links .active {
+            background-color: #ffffff; 
+            color: #4c51bf; 
+            font-weight: 600;
+        }
+
+        .content-section {
+            padding: 120px 50px 80px; 
+            text-align: left;
+        }
+        
+        .home {
+            
+        }
+        
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-container h2 {
+            text-align: center;
+            font-size: 2.8em;
+            color: #4c51bf;
+            margin-bottom: 50px;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .about-container h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #6b46c1;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .info-cards {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            flex: 1; 
+            min-width: 280px; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 5px solid #4c51bf;
+        }
+        
+        .card:nth-child(2) { border-top-color: #6b46c1; } 
+        .card:nth-child(3) { border-top-color: #28a745; } 
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            font-size: 1.5em;
+            margin-top: 0;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .card h3 i {
+            margin-right: 15px;
+            color: inherit; 
+            font-size: 1.2em;
+        }
+        
+        
+        .card:nth-child(1) h3 i { color: #4c51bf; } 
+        .card:nth-child(2) h3 i { color: #6b46c1; } 
+        .card:nth-child(3) h3 i { color: #28a745; } 
+
+        .card p, .card ul {
+            font-size: 1.0em;
+            color: #4b5563;
+            margin-bottom: 15px;
+        }
+        
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .card ul li {
+            padding: 5px 0;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        
+        .card ul li:last-child {
+            border-bottom: none;
+        }
+
+        
+        
+        
+        @media (max-width: 992px) {
+            .navbar { padding: 15px 20px; }
+            .nav-links li { margin-left: 10px; }
+            .nav-links a { padding: 8px 10px; font-size: 0.9em; }
+            
+            .info-cards {
+                flex-direction: column; 
+            }
+            
+            .card {
+                max-width: 100%;
+            }
+            
+            .about-container h2 {
+                font-size: 2.2em;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px 10px;
+                position: relative; 
+            }
+            .content-section {
+                padding: 30px 20px 60px; 
+            }
+            .logo {
+                margin-bottom: 10px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .nav-links li {
+                margin: 5px 10px;
+            }
+            
+            .about-container {
+                padding: 20px 15px;
+            }
+        }
+        
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e293b;
+            color: #e2e8f0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">Beatrix</a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tentang.html" class="active">About Me</a></li>
+                <li><a href="protofolio.html">Portfolio/Projects</a></li>
+                <li><a href="resume.html">Resume/CV</a></li>
+                <li><a href="kontak.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="content-section">
+        <div class="about-container">
+            <h2>About Me</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; font-size: 1.1em;">
+                I am BEATRIX, an individual passionate about <strong>web development</strong> and <strong>design</strong>. Below is a look at my journey, passions, and ambitions in my career and life.
+            </p>
+            
+            <div class="info-cards">
+                
+                <div class="card background">
+                    <h3><i class="fas fa-briefcase"></i> Background</h3>
+                    <p>I am an active student at Satya Wacana Christian University majoring in Informatics Engineering.</p>
+                    <p>For the last 3/4 years, I have focused on learning about <strong>Frontend development</strong> using technologies like HTML, CSS, JavaScript (React/Vue), and also have a basic understanding of Backend (Node.js/Python).</p>
+                    <p>I genuinely enjoy the process of transforming design ideas into functional and engaging user interfaces.</p>
+                </div>
+                
+                <div class="card interest">
+                    <h3><i class="fas fa-lightbulb"></i> Interests & Expertise</h3>
+                    <ul>
+                        <li><i class="fas fa-code"></i> <strong>Web Development (Frontend):</strong> Creating responsive and optimal UI/UX.</li>
+                        <li><i class="fas fa-palette"></i> <strong>Graphic Design:</strong> Utilizing Figma for project assets.</li>
+                        <li><i class="fas fa-book"></i> <strong>Continuous Learning:</strong> Always studying the latest frameworks and technologies.</li>
+                    </ul>
+                </div>
+                
+                <div class="card goals">
+                    <h3><i class="fas fa-bullseye"></i> Career Goals</h3>
+                    <ul>
+                        <li><i class="fas fa-star"></i> Become a Fullstack Programmer</li>
+                        <li><i class="fas fa-rocket"></i> Develop innovative products</li>
+                        <li><i class="fas fa-handshake"></i> Run open source projects</li>
+                        <li><i class="fas fa-medal"></i> Create digital products that contribute to society</li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p> 🥺| &copy; 2025 BEATRIX</p>
+    </footer>
+</body>
+</html>

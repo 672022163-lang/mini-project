@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume/CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif; 
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5; 
+            color: #1e293b; 
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-image: linear-gradient(to right, #4c51bf, #6b46c1); 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            padding: 15px 40px; 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+            position: fixed; 
+            top: 0;
+            width: 100%;
+            z-index: 1000; 
+            box-sizing: border-box;
+        }
+        
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.8em;
+            font-weight: 700;
+            letter-spacing: 0.5px; 
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 15px; 
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px; 
+            border-radius: 20px; 
+            font-weight: 400;
+            transition: background-color 0.3s, transform 0.2s;
+            white-space: nowrap; 
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.15); 
+            transform: translateY(-1px);
+        }
+
+        .nav-links .active {
+            background-color: #ffffff; 
+            color: #4c51bf; 
+            font-weight: 600;
+        }
+
+        .content-section {
+            padding: 100px 50px 80px; 
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .resume-header h1 {
+            font-size: 2.8em;
+            color: #4c51bf;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .resume-header h1::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #6b46c1;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        
+        .resume-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+        
+        .resume-section h2 {
+            color: #6b46c1;
+            font-size: 2em;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .timeline-icon {
+            color: #4c51bf;
+            font-size: 1.5em;
+            margin-right: 20px;
+            z-index: 10;
+        }
+        
+        .timeline-content h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.3em;
+            color: #1e293b;
+            font-weight: 600;
+        }
+        
+        .timeline-content p {
+            margin: 0 0 5px 0;
+            color: #4b5563;
+        }
+        
+        .timeline-content .tahun {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #6b46c1;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill-tag {
+            background-color: #e2e8f0;
+            color: #4c51bf;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.95em;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        
+        .skill-tag:hover {
+            background-color: #4c51bf;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .skill-category {
+            width: 100%;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 1.1em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e293b;
+            color: #e2e8f0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 100px 20px 60px;
+            }
+            .resume-header h1 {
+                font-size: 2.2em;
+            }
+            .resume-section {
+                padding: 20px;
+            }
+            .resume-section h2 {
+                font-size: 1.6em;
+            }
+            .timeline-item {
+                flex-direction: column;
+                margin-left: 0;
+            }
+            .timeline-icon {
+                display: none; 
+            }
+            .timeline-content {
+                margin-left: 0;
+            }
+            .skill-tag {
+                font-size: 0.9em;
+                padding: 7px 12px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px 10px;
+                position: relative; 
+            }
+            .content-section {
+                padding-top: 30px; 
+            }
+            .logo {
+                margin-bottom: 10px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .nav-links li {
+                margin: 5px 8px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">Beatrix</a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tentang.html">About Me</a></li>
+                <li><a href="protofolio.html">Portfolio/Projects</a></li>
+                <li><a href="resume.html" class="active">Resume/CV</a></li>
+                <li><a href="kontak.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="content-section">
+        <div class="resume-header">
+            <h1>Resume & Curriculum Vitae</h1>
+        </div>
+
+        <section class="resume-section">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-university"></i></div>
+                <div class="timeline-content">
+                    <h3>Ungraduate Degree of Information Technology</h3>
+                    <p>Satya Wacana Christian University</p>
+                    <span class="tahun">2022 — Now</span>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-school"></i></div>
+                <div class="timeline-content">
+                    <h3>Senior High School (Science Major)</h3>
+                    <p>State Senior High School 1 Palopo</p>
+                    <span class="tahun">2017 — 2020</span>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="resume-section">
+            <h2><i class="fas fa-tools"></i> Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">Web Development (Frontend)</div>
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">Bootstrap/Tailwind CSS</span>
+                <span class="skill-tag">Responsive Design</span>
+                
+                <div class="skill-category">Backend Development & Database</div>
+                <span class="skill-tag">SQL (MySQL/PostgreSQL)</span>
+                
+                <div class="skill-category">Design & Others (Soft Skills)</div>
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">Git & GitHub</span>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h2><i class="fas fa-trophy"></i> Achievements & Certifications</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-star"></i></div>
+                <div class="timeline-content">
+                    <h3>-</h3>
+                </div>
+            </div>
+        </section>     
+    </main>
+    <footer>
+        <p> 🥺| &copy; 2025 BEATRIX</p>
+    </footer>
+</body>
+</html>

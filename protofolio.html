@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio/Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif; 
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5; 
+            color: #1e293b; 
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-image: linear-gradient(to right, #4c51bf, #6b46c1); 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            padding: 15px 40px; 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+            position: fixed; 
+            top: 0;
+            width: 100%;
+            z-index: 1000; 
+            box-sizing: border-box;
+        }
+        
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.8em;
+            font-weight: 700;
+            letter-spacing: 0.5px; 
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 15px; 
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px; 
+            border-radius: 20px; 
+            font-weight: 400;
+            transition: background-color 0.3s, transform 0.2s;
+            white-space: nowrap; 
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.15); 
+            transform: translateY(-1px);
+        }
+
+        .nav-links .active {
+            background-color: #ffffff; 
+            color: #4c51bf; 
+            font-weight: 600;
+        }
+
+        .content-section {
+            padding: 100px 50px 80px; 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .portfolio-header h1 {
+            font-size: 2.8em;
+            color: #4c51bf;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .portfolio-header p {
+            font-size: 1.1em;
+            color: #4b5563;
+        }
+        
+        .portfolio-header h1::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #6b46c1;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        
+        .projects-grid {
+            display: flex; 
+            justify-content: center; 
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            max-width: 500px; 
+            width: 100%;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 250px; 
+            background-color: #e2e8f0; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3em;
+            color: #4c51bf;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .project-info {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .project-info h3 {
+            font-size: 1.5em;
+            color: #4c51bf;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .project-info p {
+            color: #4b5563;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
+
+        .project-tech {
+            margin-bottom: 20px;
+        }
+        
+        .project-tech span {
+            display: inline-block;
+            background-color: #f0f4ff;
+            color: #6b46c1;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .project-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-right: 10px;
+            transition: opacity 0.3s;
+        }
+        
+        .project-links a i {
+            margin-right: 5px;
+        }
+
+        .btn-live {
+            background-color: #28a745;
+        }
+        
+        .btn-live:hover {
+            opacity: 0.9;
+        }
+
+        .btn-repo {
+            background-color: #1e293b;
+        }
+        
+        .btn-repo:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e293b;
+            color: #e2e8f0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 100px 20px 60px;
+            }
+            .portfolio-header h1 {
+                font-size: 2.2em;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px 10px;
+                position: relative; 
+            }
+            .content-section {
+                padding-top: 30px; 
+            }
+            .logo {
+                margin-bottom: 10px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .nav-links li {
+                margin: 5px 8px;
+            }
+            .project-links a {
+                display: block;
+                text-align: center;
+                margin: 10px 0 0 0;
+            }
+            .project-card {
+                 max-width: 100%; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">Beatrix</a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tentang.html">About Me</a></li>
+                <li><a href="protofolio.html" class="active">Portfolio/Projects</a></li>
+                <li><a href="resume.html">Resume/CV</a></li>
+                <li><a href="kontak.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="content-section">
+        <div class="portfolio-header">
+            <h1>Showcase </h1>
+        </div>
+
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-image">
+                    Application Design Prototype
+                </div>
+                <div class="project-info">
+                    <h3>Modern Motorcycle Repair Shop</h3>
+                    <p>An online motorcycle workshop platform designed to provide easy and reliable motorcycle maintenance solutions with excellent features, ranging from practical **Online Service Booking**, complete and quality **Official Spare Parts** (parts, tires, oil, lights, etc.), **Scheduled Maintenance**, to Repair information and **Motorcycle Repair Payments**.</p>
+                    <div class="project-tech">
+                        <span>FIGMA</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://www.figma.com/design/F5OgsyFCIdJqjLQrlUhPwZ/Bengkel-Motor-PROTOTYPE?node-id=0-1&t=373ErYr6CCdoC219-1" target="_blank" class="btn-live"><i class="fas fa-eye"></i> View Live</a>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        
+    </main>
+    <footer>
+        <p> 🥺| &copy; 2025 BEATRIX</p>
+    </footer>
+</body>
+</html>
